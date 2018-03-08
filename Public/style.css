@@ -1,0 +1,120 @@
+* {
+    box-sizing: border-box;
+}
+
+/* Main Page Grid */
+
+.wrapper {
+    display: grid;
+    grid-gap: 10px;
+}
+
+/* Navigation Flex box*/
+.nav-wrapper {
+    background-color: #222533;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    height: 50px;
+}
+
+.nav-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 1 9%;
+    text-align: center;
+    color: #fafafa;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.nav-item.active {
+    border-top: 4px solid #1abc9c;
+    color: #1abc9c;
+}
+
+.nav-item:hover {
+    -webkit-transition: all 0.3s 0s;
+    -moz-transition: all 0.3s 0s;
+    -ms-transition: all 0.3s 0s;
+    -o-transition: all 0.3s 0s;
+    transition: all 0.3s 0s;
+    color: #1abc9c;
+}
+
+/* Slider */
+
+.slide{
+    display: flex;
+    flex-flow: row wrap;
+}
+.slide-1 {
+    background-image: url("slide-1.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 1000px;
+    width: 100%;
+}
+
+.slide-2 {
+    background-image: url("https://pp.userapi.com/c638328/v638328400/62de8/ZNmGAKS79e0.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 1000px;
+    width: 100%;
+}
+
+.slide-3 {
+    background-image: url("https://pp.userapi.com/c841633/v841633768/1f67c/278dNngIHN0.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 1000px;
+    width: 100%;
+}
+
+.prev,
+.next {
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: #fff;
+    font-size: 2rem;
+    font-weight: bold;
+    border-radius: 0 3px 3px 0;
+    transition: 600ms ease;
+    z-index: +1;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+.fade {
+    animation-name: fade;
+    animation-duration: 1.7s;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+
