@@ -1,0 +1,101 @@
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  color: #fafafa;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-size: 50px;
+}
+
+/* Main Page Grid */
+.wrapper {
+  display: grid;
+  grid-gap: 0;
+}
+
+/* Navigation Flex box*/
+.nav-wrapper {
+  background-color: #222533;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  height: 52px;
+}
+
+.nav-item {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  flex: 0 1 9%;
+  text-align: center;
+  color: #fafafa;
+}
+/*first child of nav-items*/
+h5:first-child{
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-size: 1em;
+  padding: 20px;
+  margin: 0;
+}
+.nav-item.active > h5 {
+  transform: rotate(-10deg) skew(-10deg);
+}
+.nav-item.active {
+  color: #222533;
+  background-color: #1abc9c;
+  /*font-size: px;*/
+}
+
+.nav-item {
+  background-color:transparent ;
+  transition: all 0.6s 0s;
+}
+.nav-item:hover {
+  transition: all 0.6s 0s;
+  background-color: #1abc9c;
+}
+
+[class="nav-item"] > h5{
+  transition: all 0.7s 0s;
+}
+
+[class="nav-item"] > h5:hover {
+  transition: all 0.7s 0s;
+  transform: rotate(-10deg) skew(-10deg);
+  color: #222533;
+}
+
+.logo-container {
+  height: 50px;
+  align-self: flex-start;
+}
+
+.logo-wide {
+  height: 70%;
+}
+
+/*Main Banner*/
+.main-banner {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+  background-image: url(img/banner-2.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+.banner-title {
+  text-shadow: 1px 1px 2.3px black;
+  text-align: left;
+  margin: 500px 20px;
+}
