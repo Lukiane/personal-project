@@ -1,5 +1,6 @@
+
 document.addEventListener("DOMContentLoaded", function () {
-    var item = document.querySelectorAll(".nav-item")
+    var item = document.querySelectorAll(".nav-item");
     item.forEach(function (el) {
         el.addEventListener('click', function () {
             if(document.querySelector('.active')) {
