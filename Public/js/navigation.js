@@ -8,5 +8,22 @@ document.addEventListener("DOMContentLoaded", function () {
             }
             this.classList.add('active');
         })
-    })
+    });
+
+    var toggleBtn = document.querySelector(".nav-toggle");
+    var navigation = document.querySelector(".nav-wrapper");
+
+        toggleBtn.addEventListener('click', function () {
+            if (navigation.style.display !== 'flex') {
+                navigation.style.display = 'flex';
+            } else {
+                navigation.style.display = 'none';
+            }
+        });
+
+
+
+
+
 });
+
