@@ -2,8 +2,19 @@
   box-sizing: border-box;
 }
 
+nav {
+  position: fixed;
+  width: 100%;
+}
+
+/*Variables*/
+:root {
+  --primary: rgb(62,145,204);
+  --secondary: rgb(35,35,35);
+  --blue: rgb(250,199,16);
+}
 h1 {
-  color: #222533;
+  color: #fafafa;
   font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
   font-size: 35px;
@@ -17,7 +28,7 @@ h2 {
 }
 
 h3 {
-  color: #222533;
+  color: var(--secondary);
   font-family: "Montserrat", sans-serif;
   font-weight: 100;
   text-transform: uppercase;
@@ -33,21 +44,22 @@ h3 {
 
 /* Navigation Flex box*/
 .nav-wrapper {
-  background-color: #222533;
+  background-color: var(--secondary);
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-end;
   list-style-type: none;
   margin: 0;
   padding: 0;
-  height: 52px;
+  height: 60px;
 }
 
 .toggle {
-  background-color: #101c29;
+  background-color: rgb(58,58,58);
   display: none;
   flex-flow: row nowrap;
   width: 100%;
+  height: 60px;
 }
 
 .nav-toggle {
@@ -59,6 +71,10 @@ h3 {
 
 }
 
+#register-button-mobile {
+  flex: 0 0 1%;
+}
+
 .nav-item {
   display: flex;
   flex-flow: row wrap;
@@ -67,10 +83,35 @@ h3 {
   flex: 0 1 9%;
   text-align: center;
   color: #fafafa;
+  transition: all 0.9s 0s;
 }
+
+#register, #register:hover {
+  flex: 0 0 10%;
+  background: var(--secondary);
+}
+
+#register-button {
+  background-color: white;
+  color: var(--blue);
+}
+
+#register-button:hover {
+  background-color: var(--blue);
+  color: var(--primary);
+}
+#register-mobile {
+  display: none;
+  background-color: var(--blue);
+}
+
 @media (max-width: 768px) {
   .toggle {
     display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(36, 36, 36);
   }
   .nav-wrapper {
     display: none;
@@ -79,18 +120,27 @@ h3 {
   }
   .nav-wrapper .nav-item {
     flex: 0 0 100%;
-    background-color: #222533;
+    background-color: var(--secondary);
   }
   div .logo-container, .logo-wide {
     display: none;
     order: 1;
   }
-}
 
+  #register {
+    display:none;
+  }
+
+  #register-mobile {
+    display: flex; !important;
+  }
+
+}
 
 /*first child of nav-items*/
 h5:first-child {
   font-family: "Montserrat", sans-serif;
+  font-weight: bold;
   text-transform: uppercase;
   font-size: 1em;
   padding: 20px;
@@ -101,25 +151,26 @@ h5:first-child {
   cursor: pointer;
 }
 .nav-item.active {
-  color: #222533;
-  background-color: #1abc9c;
+  color: var(--secondary);
+  background-color: var(--primary);
   cursor: pointer;
 }
 
 .nav-item {
   background-color: transparent;
-  transition: all 0s 0s;
+  transition: background-color 0.2s 0s, box-shadow 0s 0s;
+
 }
 [class="nav-item"]:hover {
   transition: all 0s 0s;
   text-shadow: 20px 10px 2px rgba(0, 0, 0, 0.5);
-  background-color: #15bc9c;
+  background-color: var(--primary);
   cursor: pointer;
 }
 [class="nav-item"]:hover h5 {
   transition: all 0.3s 0s;
   transform: rotate(-5deg) skew(-10deg);
-  color: #222533;
+  color: var(--secondary);
   cursor: pointer;
 }
 
@@ -152,22 +203,13 @@ h5:first-child {
 }
 
 .logo-wide {
-  height: 70%;
+  height: 90%;
 }
 .logo-small {
   height: 70%;
 }
 
 /*Main Banner*/
-.main-banner {
-  display: flex;
-  flex-flow: row wrap;
-  background-image: url(img/cat-banner.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  height: 900px;
-}
 .banner-title {
   display: flex;
   flex-flow: column wrap;
@@ -175,23 +217,24 @@ h5:first-child {
 }
 
 .banner-title-text {
-  margin: 0;
-  margin-left: 100px;
+  font-size: 45px;
+  text-align: left;
+  margin-left:50px;
 }
 
 .banner-subtitle-text {
-  margin-left: 100px;
+  margin-left: 50px;
 }
 
 .btn {
   font-family: "Montserrat", sans-serif;
   padding: 10px;
   border: 0;
-  border-radius: 4px;
+  border-radius: 2px;
   color: #fafafa;
   margin-left: 100px;
   align-self: flex-start;
-  background-color: #1abc9c;
+  background-color: var(--primary);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   transition: all 0.5s;
 }
@@ -199,13 +242,19 @@ h5:first-child {
 .btn:hover {
   cursor: pointer;
   transition: all 0.3s;
-  color: #222533;
+  color: var(--secondary);
   background-color: white;
   box-shadow: 0 0 0 rgba(0, 0, 0, 0.16), 0 0 0 rgba(0, 0, 0, 0.23);
 }
 
 .btn:focus {
   outline: 0;
+}
+
+.primary-btn {
+  align-self: center;
+  margin: auto;
+  text-transform: uppercase;
 }
 
 /*Goals Part*/
@@ -216,7 +265,7 @@ h5:first-child {
 }
 
 .goals-title {
-  color: #1abc9c;
+  color: var(--primary);
   width: 100%;
   text-align: center;
   margin-bottom: 5px;
@@ -233,7 +282,7 @@ h5:first-child {
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
-  border: 5px solid #1abc9c;
+  border: 5px solid  var(--primary);
   border-radius: 50%;
   background-color: white;
   height: 130px;
@@ -247,12 +296,12 @@ h5:first-child {
 }
 
 .portfolio {
-  margin-top: 30px;
+  margin-top: 35px;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   align-items: flex-start;
-  background-color: #222533;
+  background-color: var(--secondary);
 }
 
 .portfolio-title {
@@ -263,13 +312,13 @@ h5:first-child {
 }
 
 .portfolio-subtitle {
-  color: #1abc9c;
+  color:  var(--primary);
   flex: 0 0 100%;
   text-align: center;
 }
 
 .port-item {
-  background-image: url(img/port-item.jpeg);
+  background-image: url(../img/port-item.jpeg);
   background-size: 350px;
   background-repeat: no-repeat;
   background-position: left top;
@@ -283,7 +332,7 @@ h5:first-child {
 
 .port-item:hover {
   transition: all 0.4s 0s;
-  background-color: #1abc9c;
+  background-color:  var(--primary);
   cursor: pointer;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
@@ -293,3 +342,24 @@ h5:first-child {
   margin-left: 10px;
   text-align: left;
 }
+
+#particles-js {
+  width: 100%;
+  background-color: #121212;
+  background-image: url("https://i.imgur.com/jDEW4Dx.png");
+  background-position: center;
+  background-size: 450px ;
+  background-repeat: no-repeat;
+  height: 700px;
+}
+
+ .title {
+  color:var(--primary);
+   text-align: center;
+}
+
+ .sub-title {
+   color: #121212;
+   text-align: center;
+ }
+
