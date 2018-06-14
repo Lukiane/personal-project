@@ -104,7 +104,7 @@ h3 {
   background-color: var(--blue);
   color: var(--secondary);
 }
-#register-mobile {
+#register-mobile {7
   display: none;
   background-color: var(--primary);
 }
